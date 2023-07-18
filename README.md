@@ -377,6 +377,14 @@ export default {
 
 ###  DOM 更新后执行回调函数
 
+> 场景
+>
+> 使用 element-ui  `<el-table>` 组件，点击查询按钮调用后端接口获取数据，重新给 `<el-table>` 组件中，当绑定的 `:data` 数据发生变化时，表格会在下一个 Vue.js 的更新周期中进行刷新和重新渲染。
+>
+> 如果没有重新渲染成功，就调用操作  `<el-table>` 的方法（  例如：this.$refs.table.toggleRowSelection(row, true) ，修改勾选框状态选中 ），执行不报错但是不会生效。
+
+
+
 > $nextTick
 
 `$nextTick` 是 Vue.js 提供的一个方法，用于在 DOM 更新后执行回调函数。它可以用来确保在获取更新后的 DOM 元素或执行其他操作时，DOM 已经完成了相应的更新。
@@ -460,10 +468,6 @@ export default {
 ## ruo-yi-ui
 
 
-
-
-
-test
 
 
 
